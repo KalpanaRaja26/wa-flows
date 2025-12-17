@@ -1,7 +1,7 @@
 from prefect import flow, task
 
 @task
-def risky_task()
+def risky_task():
     raise Exception("Failure allowed")
 
 @task
@@ -10,8 +10,8 @@ def continue_task():
 
 @flow
 def soft_fail_workflow():
-    try:
+    try
         risky_task()
-    except:
+    except
         pass
     continue_task()
